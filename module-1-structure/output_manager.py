@@ -25,3 +25,12 @@ def evaluate_worker_output(original_goal: str, worker_output: str) -> str:
     # We parse the result so our main script knows whether to proceed or loop back.
     result = json.loads(evaluation.choices[0].message.content)
     return result["status"]
+
+# We simulate a worker going completely off track.
+macro_goal = "Find the monthly price of Competitor X's basic plan."
+bad_research = "Competitor X was founded in 2012 by John Doe. They have 500 employees. Their office is in Seattle."
+
+# We run the manager check before letting the agent continue its expensive research.
+decision = evaluate_worker_output(macro_goal, bad_research)
+print(f"Manager Decision: {decision}")
+# Expected output: Manager Decision: FAIL
