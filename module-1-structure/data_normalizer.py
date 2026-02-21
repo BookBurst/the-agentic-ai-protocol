@@ -34,3 +34,10 @@ def normalize_research_data(raw_text: str):
     
     # We return a perfectly clean JSON object ready for the Analyst agent.
     return json.loads(response.choices[0].message.content)
+
+# We test it with a messy, ambiguous input.
+messy_input = "Acme Corp made £40,000 on the 5th of March 2024."
+clean_data = normalize_research_data(messy_input)
+
+print(f"Clean Handoff Data: {clean_data}")
+# The Analyst receives perfect numbers and dates. Zero guesswork required.
