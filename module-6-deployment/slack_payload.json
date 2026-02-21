@@ -1,0 +1,25 @@
+{
+  "text": "URGENT: Ambiguous vendor contract detected. Confidence score: 40%.",
+  "attachments": [
+    {
+      "text": "Please select the correct routing destination:",
+      "fallback": "You are unable to choose an option.",
+      "callback_id": "contract_routing_decision_42",
+      "color": "#FF0000",
+      "actions": [
+        {
+          "name": "route_choice",
+          "text": "Send to Legal",
+          "type": "button",
+          "value": "legal_department"
+        },
+        {
+          "name": "route_choice",
+          "text": "Send to Finance",
+          "type": "button",
+          "value": "finance_department"
+        }
+      ]
+    }
+  ]
+}
