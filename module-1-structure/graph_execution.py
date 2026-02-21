@@ -12,3 +12,12 @@ builder.add_edge("researcher", END)
 
 # 4. Compile the logic into an executable application.
 agent_app = builder.compile()
+
+# Testing the execution with a raw query.
+test_input = {
+    "messages": ["Analyze the benefits of idempotent API design."],
+    "is_finished": False
+}
+
+for output in agent_app.stream(test_input):
+    print(output)
