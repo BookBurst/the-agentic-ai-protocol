@@ -3,24 +3,24 @@ from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
-# 1. UNLOCKING THE VAULT
+# 1. LOAD CONFIGURATION
 load_dotenv()
 if not os.environ.get("OPENAI_API_KEY"):
-    raise ValueError("The API vault is empty. Check the .env file.")
+    raise ValueError("API Key missing. Check your .env file.")
 
-# 2. BUILDING THE BOUNCER
-class TestResponse(BaseModel):
-    system_status: str = Field(description="Reply with exactly 'ALL SYSTEMS GREEN'")
-    confidence_score: int = Field(description="A number between 1 and 100")
+# 2. DEFINE STRUCTURED OUTPUT
+class SystemCheck(BaseModel):
+    status: str = Field(description="Must be 'SYSTEM_OPERATIONAL'")
+    latency_score: int = Field(description="A simulated value between 1 and 100")
 
-# 3. WAKING UP THE MODEL
-# Utilizziamo un modello veloce ed economico per il test
+# 3. INITIALIZE MODEL
+# Using a cost-effective model for the initial handshake
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
-structured_llm = llm.with_structured_output(TestResponse)
+structured_llm = llm.with_structured_output(SystemCheck)
 
-# 4. EXECUTING THE TEST
-print("Pinging the intelligence provider...")
-response = structured_llm.invoke("Run a quick system diagnostic.")
-print(f"Status: {response.system_status}")
-print(f"Confidence: {response.confidence_score}%")
-print("The workshop is ready.")
+# 4. EXECUTION
+print("Testing connection to intelligence provider...")
+response = structured_llm.invoke("Perform a system handshake.")
+print(f"Connection Status: {response.status}")
+print(f"Latency Score: {response.latency_score}")
+print("API verification complete.")
