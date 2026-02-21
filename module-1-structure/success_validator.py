@@ -24,3 +24,5 @@ def evaluate_success_criteria(drafted_email: str) -> bool:
 # We test the manager with a bad draft from the AI.
 bad_draft = "Hello, we are better than TechCorp. Please reply."
 is_ready = evaluate_success_criteria(bad_draft)
+
+# The script returns 'False'. The agent must rewrite the email.
