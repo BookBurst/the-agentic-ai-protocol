@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI
 worker_llm = ChatOpenAI(model="<LATEST_FAST_MODEL>", temperature=0)
 
 # We define the iron box. Notice the lack of conversational phrasing.
+# We use capital letters to define strict boundaries for the parser.
 directive = """
 ROLE: Senior Data Classifier.
 MISSION: Read the incoming text and categorize the customer intent.
@@ -20,3 +21,13 @@ NEGATIVE CONSTRAINTS:
 
 # We load the directive into the machine's permanent memory block.
 system_instruction = SystemMessage(content=directive)
+
+# We simulate a chaotic, emotional email from a customer.
+incoming_email = HumanMessage(content="Hello, my screen is completely black and I am furious! Help me!")
+
+# We fire the request. The model reads the strict persona, then processes the messy data.
+print("Executing classification node...")
+response = worker_llm.invoke([system_instruction, incoming_email])
+
+# The output will be exactly "TECHNICAL_SUPPORT". Nothing else.
+print(f"System Output: {response.content}")
