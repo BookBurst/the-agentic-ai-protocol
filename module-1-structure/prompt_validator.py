@@ -25,3 +25,11 @@ def check_prompt_completeness(user_input: str) -> dict:
     
     # We parse the ruling to decide our next routing step.
     return json.loads(response.choices[0].message.content)
+
+# We test the system with a lazy, ambiguous command.
+lazy_human_command = "Send the presentation."
+routing_decision = check_prompt_completeness(lazy_human_command)
+
+if routing_decision["status"] == "INCOMPLETE":
+    # The system catches the missing context and stops the workflow.
+    print(f"System Paused. Asking User: Please specify the {routing_decision['missing']}.")
