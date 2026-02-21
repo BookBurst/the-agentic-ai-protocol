@@ -30,6 +30,6 @@ def semantic_split(document_text: str, max_length: int = 1000):
 
 # EXECUTION PHASE
 # 1. Extraction (Chewing)
-# raw_text = chew_pdf("company_handbook.pdf")
+raw_text = chew_pdf("company_handbook.pdf")
 # 2. Slicing (Digestion)
-# final_chunks = semantic_split(raw_text)
+final_chunks = semantic_split(raw_text)
