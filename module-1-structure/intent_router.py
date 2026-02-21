@@ -18,7 +18,7 @@ class RouteDecision(BaseModel):
 def classify_user_intent(user_text: str) -> RouteDecision:
     # We use a fast and inexpensive model to save money on simple classification tasks.
     response = client.beta.chat.completions.parse(
-        model="gpt-4o-mini",
+        model="<LATEST_FAST_MODEL>",
         messages=[
             # We provide the strict system instructions and the critical fallback option.
             {"role": "system", "content": "You are a routing switchboard. Classify the user intent into exactly one of these categories: TECHNICAL_SUPPORT, REFUND_REQUEST, SALES_INQUIRY. If the request does not fit these categories, you must output UNKNOWN."},
