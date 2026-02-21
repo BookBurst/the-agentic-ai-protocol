@@ -20,7 +20,7 @@ def react_agent(user_goal: str) -> str:
     max_steps = 5
     current_step = 0
 
-    # We start the ReAct loop.
+# We start the ReAct loop.
     while current_step < max_steps:
         # We send the entire memory log to the AI so it knows what it already tried.
         response = client.chat.completions.create(
