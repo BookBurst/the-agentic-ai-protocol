@@ -5,6 +5,7 @@ from mcp.client.stdio import stdio_client, StdioServerParameters
 
 async def run_mcp_bridge():
     # We define parameters to launch the prebuilt Notion server.
+    # We use npx to run the official open-source package without manual installation.
     server_params = StdioServerParameters(
         command="npx",
         args=["-y", "@modelcontextprotocol/server-notion"],
@@ -19,6 +20,7 @@ async def run_mcp_bridge():
             await session.initialize()
             
             # We ask the server for a list of all available Notion actions.
+            # This includes creating pages, reading databases, and updating blocks.
             available_tools = await session.list_tools()
             
             print("The agent is now hooked into Notion with these capabilities:")
