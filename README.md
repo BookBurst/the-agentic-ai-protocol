@@ -12,11 +12,17 @@ You are the Architect, not the typist. Follow these steps to deploy your agents:
 3. **The Execution Hack:** Paste the code into ChatGPT, Gemini, or Claude using the "Beginner Prompt" found on the second page of the book.
 
 ## 📂 Repository Structure
-The archive follows the **S.C.A.L.E.** Protocol:
-* `setup/`: Initial requirements and environment installation.
-* `module-1` to `module-5`: The core S.C.A.L.E. framework (Structure, Connection, Archiving, Limits, Evolution).
-* `module-6` to `module-8`: Deployment, Troubleshooting, and Production Blueprints.
-* `evergreen-protocol/`: Long-term maintenance and system stability.
+The archive follows the **Evergreen Protocol**:
+* `module-1-structure`: Building the core agentic loop.
+* `module-2-connection`: Linking agents to the real world (MCP, Tools).
+* `module-3-archiving`: Managing vector memory and RAG.
+* `module-4-limits`: Cost control and safety boundaries.
+* `module-5-evolution`: Monitoring, A/B testing, and optimization.
+* `module-6-deployment`: Production, Docker, and Cloud.
+* `module-7-troubleshooting`: Resilience, retries, and logic interceptors.
+* `module-8-blueprints`: Ready-to-use project templates.
+* `module-9-evergreen`: The final agnostic architecture.
+* `conclusion`: The Architect's final pre-flight checklist.
 
 ## ⚠️ Security & Configuration
 Before executing any script, rename the `.env.example` file to `.env` and insert your personal API keys. **Never share your real .env file publicly.**
