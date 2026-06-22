@@ -2,7 +2,8 @@
 
 Welcome. 
 
-This is the official repository for the book **"Agentic AI Architectural Patterns"**. This archive contains the high-level "floor plans" (code and architectural schemas) required to build 24/7 autonomous digital workforces.
+This is the official repository for the book **"Agentic AI Architectural Patterns"**. https://www.amazon.com/dp/B0GRX3GT9Q
+This archive contains the high-level "floor plans" (code and architectural schemas) required to build 24/7 autonomous digital workforces.
 
 ## 🛠 How to Use These Blueprints
 You are the Architect, not the typist. Follow these steps to deploy your agents:
